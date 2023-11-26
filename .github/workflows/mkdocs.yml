@@ -29,7 +29,7 @@ defaults:
 jobs:
   # Build job
   build:
-    runs-on: python:3
+    runs-on: ubuntu-latest
     # env:
     steps:
       - name: Checkout
