@@ -2,12 +2,12 @@
 # some sections error'd with 2 spaces indentation, keep 4!
 # dev_addr: '127.0.0.1:8000'  # address used when running mkdocs serve
 site_name: Public Notes
-site_url: https://SebastianErfort.github.io/pub_notes
+site_url: https://SebastianErfort.github.io/notes
 site_author: Sebastian Erfort
 site_dir: public # changed value to default for GitLab Pages
 copyright: Sebastian Erfort
-repo_name: git.lwp.rug.nl
-repo_url: https://SebastianErfort.github.io/pub_notes
+repo_name: SebastianErfort/notes
+repo_url: https://github.com/SebastianErfort/notes
 edit_uri_template: '-/wikis/{path_noext!q}/edit'  # doesn't work yet
 plugins:
     - search:
@@ -28,7 +28,8 @@ theme:
   palette:
     # custom primary color set through css import extra_css
     # see https://squidfunk.github.io/mkdocs-material/setup/changing-the-colors/#custom-colors
-    primary: custom
+    scheme: slate
+    primary: teal
   features:
     - content.code.copy  # see https://squidfunk.github.io/mkdocs-material/reference/code-blocks/#code-copy-button
     - navigation.tabs

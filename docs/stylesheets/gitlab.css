@@ -1,0 +1,23 @@
+.gitlabel,
+.gitlabel_agile,
+.gitlabel_blocked,
+.gitlabel_documentation,
+.gitlabel_devops,
+.gitlabel_inprogress,
+.gitlabel_ready,
+.gitlabel_todo {
+  color: white;
+  /* Enormous radius gives desired pill-shape, see
+   * https://stackoverflow.com/questions/18794947/capsule-shape-using-border-radius-without-a-set-width-or-height */
+  border-radius: 500px;
+  padding: 0px 10px 5px 10px;
+  width: fit-content;
+}
+
+.gitlabel_agile { background-color: #00747F }
+.gitlabel_blocked { background-color: #FF0000 }
+.gitlabel_documentation { background-color: #AA8500 }
+.gitlabel_devops { background-color: #6699CC }
+.gitlabel_inprogress { background-color: #00B140 }
+.gitlabel_ready { background-color: #3cb371 }
+.gitlabel_todo { background-color: orange }

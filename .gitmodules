@@ -1,0 +1,3 @@
+[submodule "docs/seb_pub"]
+	path = docs/seb_pub
+	url = git@github.com:SebastianErfort/notes_public.git
