@@ -3,5 +3,6 @@ mkdocs-material
 mkdocs-exclude
 # see https://pypi.org/project/mkdocs-ezlinked-plugin/
 mkdocs-ezlinked-plugin
-mkdocs-obsidian-support-plugin
 mdx-truly-sane-lists
+mkdocs-obsidian-support-plugin~=1.3.2
+overrides~=7.7.0
