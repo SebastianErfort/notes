@@ -1,90 +1,144 @@
----
 # some sections error'd with 2 spaces indentation, keep 4!
+---
 # dev_addr: '127.0.0.1:8000'  # address used when running mkdocs serve
-site_name: Public Notes
+
+site_name: Sebastian's Public Notes
 site_url: https://SebastianErfort.github.io/notes
 site_author: Sebastian Erfort
 site_dir: public # changed value to default for GitLab Pages
 copyright: Sebastian Erfort
+
 repo_name: SebastianErfort/notes
 repo_url: https://github.com/SebastianErfort/notes
 edit_uri_template: '-/wikis/{path_noext!q}/edit'  # doesn't work yet
-plugins:
-    - search:
-        lang: en
-    - tags  # see https://squidfunk.github.io/mkdocs-material/setup/setting-up-tags/#setting-up-tags
-    - exclude:  # see https://github.com/apenwarr/mkdocs-exclude
-        glob:
-            - ".obsidian/*"
-            - ".git"
-        regex:
-            # avoid duplicate pages for sym-linked index/home pages
-            # - "wiki/(chris|heiko|jacob|jurjen|remco|sebastian)/[Hh]ome.md"
-    - ezlinks  # see https://pypi.org/project/mkdocs-ezlinked-plugin/
-    - obsidian-support  # see https://github.com/ndy2/mkdocs-obsidian-support-plugin
-# see https://squidfunk.github.io/mkdocs-material/setup/changing-the-colors/
+
 theme:
   name: material
   # see https://squidfunk.github.io/mkdocs-material/setup/changing-the-logo-and-icons/
   # logo: assets/logo.png
+  custom_dir: overrides
 
+  # see https://squidfunk.github.io/mkdocs-material/setup/changing-the-colors/
   palette:
     # Palette toggle for dark mode
-    - media: "(prefers-color-scheme: dark)"
-      scheme: slate
-      primary: teal
-      toggle:
-        icon: material/weather-night
-        name: Switch to light mode
+    scheme: sebastian
+    primary: custom
 
-    # Palette toggle for light mode
-    - media: "(prefers-color-scheme: light)"
-      scheme: default
-      primary: teal
-      toggle:
-        icon: material/weather-sunny
-        name: Switch to dark mode
   features:
-    - content.code.copy  # see https://squidfunk.github.io/mkdocs-material/reference/code-blocks/#code-copy-button
+    - navigation.indexes
+    - navigation.top
     - navigation.tabs
+    - navigation.tabs.sticky
+    - navigation.instant
+    - navigation.instant.progress
+    # - navigation.instant.preview
+    - navigation.tracking
+    - search.suggest
+    - search.highlight
+    # see https://squidfunk.github.io/mkdocs-material/reference/code-blocks/
+    - content.code.copy
+    - content.code.annotate
     - toc.follow
+
+hooks:
+  - overrides/hooks/on_page_markdown.py
+  - overrides/hooks/on_env.py
+  - overrides/hooks/on_files.py
+
 extra_css:
-  - stylesheets/extra.css
-  - stylesheets/gitlab.css
-markdown_extensions:
-    - pymdownx.arithmatex:
-        generic: true
-    - admonition
-    - pymdownx.tasklist
-    # use 2 spaces indentation (spec. for many MD flavours), sane vertical spacing
-    - mdx_truly_sane_lists:
-        nested_indent: 4  # change indentation threshold - can't have both 2 and 4
-    - footnotes
-    - pymdownx.caret
-    - pymdownx.mark
-    - pymdownx.tilde
-    - toc:
-        permalink: "🔗"  # Generate permanent links at the end of each header
-        baselevel: 2
-        # marker: '[[_TOC_]]'  # no effect, material documentation doesn't mention this keyword
-        # permalink_title:  # can maybe used with variable/template to get heading text instead of icon?
-    # - wikilinks  # See https://python-markdown.github.io/extensions/wikilinks/
-    # Instead using ezlinked
-    - attr_list
-    - pymdownx.emoji:
-        emoji_index: !!python/name:materialx.emoji.twemoji
-        emoji_generator: !!python/name:materialx.emoji.to_svg
-    - pymdownx.superfences:
-        custom_fences:
-            - name: mermaid
-              class: mermaid
-              format: !!python/name:pymdownx.superfences.fence_code_format
-    - pymdownx.highlight:
-        linenums: false
+  - assets/css/extra.css
+  - assets/css/gitlab.css
+  - assets/css/admonition.css
+  - assets/css/custom_attributes.css
+  - assets/css/customization.css
+  - https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css
+  - https://cdn.jsdelivr.net/gh/ObsidianPublisher/assets@main/dist/styles.css
 
 extra_javascript:
   - javascripts/mathjax.js
   - https://polyfill.io/v3/polyfill.min.js?features=es6
   - https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js
 
+markdown_extensions:
+  - footnotes
+  - nl2br
+  - meta
+  - smarty
+  - tables
+  - attr_list
+  # - sane_lists
+  - mdx_breakless_lists
+  - mdx_truly_sane_lists:
+      # use 4 spaces indentation for compatibility with e.g. Obsidian, sane vertical spacing
+      nested_indent: 4  # change indentation threshold - can't have both 2 and 4
+  # definition lists (non-standard)
+  - def_list
+  # check lists (non-standard)
+  - pymdownx.tasklist:
+      custom_checkbox: true
+  - pymdownx.arithmatex:
+      generic: true
+  - pymdownx.details
+  - pymdownx.magiclink
+  - pymdownx.critic
+  - pymdownx.caret
+  - pymdownx.keys
+  - pymdownx.mark
+  - pymdownx.tilde
+  - pymdownx.highlight:
+      use_pygments: true
+      anchor_linenums: true
+  - pymdownx.emoji:
+      emoji_index: !!python/name:material.extensions.emoji.twemoji
+      emoji_generator: !!python/name:material.extensions.emoji.to_svg
+  - pymdownx.inlinehilite
+  - pymdownx.snippets
+  - pymdownx.superfences:
+      custom_fences:
+        - name: mermaid
+          class: mermaid
+          format: !!python/name:pymdownx.superfences.fence_code_format
+  - pymdownx.highlight:
+      linenums: true
+  - admonition # aka call-outs in Obsidian
+  - toc:
+      permalink: "🔗"  # Generate permanent links at the end of each header
+      # baselevel: 2
+      # marker: '[[_TOC_]]'  # no effect, material documentation doesn't mention this keyword
+      # permalink_title:  # can maybe used with variable/template to get heading text instead of icon?
+
+plugins:
+  - search:
+      lang: en
+  - meta-descriptions
+  - tags  # see https://squidfunk.github.io/mkdocs-material/setup/setting-up-tags/#setting-up-tags
+  - exclude:  # see https://github.com/apenwarr/mkdocs-exclude
+      glob:
+        - ".obsidian/*"
+        - ".git"
+      # regex:
+      #     avoid duplicate pages for sym-linked index/home pages
+      #     - "wiki/(chris|heiko|jacob|jurjen|remco|sebastian)/[Hh]ome.md"
+  # see https://pypi.org/project/mkdocs-ezlinked-plugin/
+  - ezlinks:
+      wikilinks: true
+  - awesome-pages
+  # - obsidian-support  # see https://github.com/ndy2/mkdocs-obsidian-support-plugin
+  - callouts
+  - glightbox
+
+extra:
+  # SEO: assets/meta/SEO.png
+  comments: false #disable comments globally
+  generate_graph: false #generate the graph of the site
+  attachments: 'assets/img' #path to the folder where the attachments are stored
+  no-auto-h1: false #disable the automatic generation of h1 if no h1 is found
+  # blog_list:
+  #   pagination: true #enable pagination
+  #   pagination_message: true #display the message "Showing x posts out of y"
+  #   pagination_translation: 'posts in' #message to display before the number of posts ; Add your own translation!
+  #   no_page_found: "No pages found!" #message to display when no pages are found ; Add your own translation!
+  hooks:
+    strip_comments: true
+    fix_heading: true
 ...

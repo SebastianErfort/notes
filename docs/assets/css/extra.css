@@ -1,0 +1,28 @@
+:root {
+  --md-primary-fg-color: #1E293C;
+  --md-default-fg-color: white;
+  --md-default-fg-color--light: #6E97DD;
+  --md-default-bg-color: white;
+  --md-default-bg-color--light: #60A5FA;
+  --md-typeset-color: #1E293C;
+  --md-typeset-a-color: #60A5FA;
+}
+[data-md-color-scheme="sebastian"] {
+  /* see color definitions in https://github.com/squidfunk/mkdocs-material/blob/master/src/templates/assets/stylesheets/main/_colors.scss */
+  --md-primary-fg-color: #1E293C;
+  --md-primary-bg-color: white;
+  --md-accent-fg-color: #477bba;
+  --md-accent-bg-color: #1E293C;
+  --md-typeset-color: #cddfff;
+  --md-typeset-a-color: #60A5FA;
+  --md-default-fg-color: #1E293C;
+  --md-default-bg-color: #1E293C;
+  --md-admonition-fg-color: #8bd1ca;
+  --md-admonition-bg-color: #1c2a29;
+  --md-code-fg-color: #c09bff;
+  --md-code-bg-color: #382e46;
+  /* not sure what the idea behind this color is */
+  --md-typeset-mark-color: rgba(96, 165, 250, 0);
+  --md-footer-fg-color: grey;
+  --md-footer-bg-color: #1E293C;
+}
