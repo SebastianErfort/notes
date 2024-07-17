@@ -9,7 +9,7 @@ Sources are incorporated as Git submodules.
 
 ## To Do
 
-- [x] find a common aesthetic for notes and [Homepage](https://sebastianerfort.github.io)
+- [ ] trigger build from notes Markdown repo instead of schedule
 - [ ] transfer Markdown+YAML linters to stand-alone repo and use them for `pre-commit` hooks (Git or [pre-commit framework](https://pre-commit.com/))
 - [ ] style internal and external links differently - use Javascript to classify, e.g.
 
