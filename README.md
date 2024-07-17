@@ -11,6 +11,29 @@ Sources are incorporated as Git submodules.
 
 - [x] find a common aesthetic for notes and [Homepage](https://sebastianerfort.github.io)
 - [ ] transfer Markdown+YAML linters to stand-alone repo and use them for `pre-commit` hooks (Git or [pre-commit framework](https://pre-commit.com/))
+- [ ] style internal and external links differently - use Javascript to classify, e.g.
+
+    ```js
+    document.querySelectorAll('a').forEach(link => {
+        const url = link.href;
+        if (url.includes('http')) {
+            link.classList.add('external-link');
+        } else {
+            link.classList.add('internal-link');
+        }
+    });
+    ```
+
+    or with CSS
+
+    ```css
+    a[href^=http] {
+        /* external link style */
+    }
+    a[href^=http]::after {
+        /* external link icon */
+    }
+    ```
 
 
 ## Alternatives
