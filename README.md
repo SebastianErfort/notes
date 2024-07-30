@@ -11,8 +11,8 @@ Sources are incorporated as Git submodules.
 
 - [ ] trigger build from notes Markdown repo instead of schedule
 - [ ] transfer Markdown+YAML linters to stand-alone repo and use them for `pre-commit` hooks (Git or [pre-commit framework](https://pre-commit.com/))
-- [ ] style internal and external links differently - use Javascript to classify, e.g.
 - [ ] ensure Nerd Font is available in online version
+- [ ] style internal and external links differently - use Javascript to classify, e.g.
 
     ```js
     document.querySelectorAll('a').forEach(link => {

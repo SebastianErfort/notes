@@ -1,4 +1,4 @@
 [submodule "docs/seb_pub"]
-	path = docs/seb_pub
+	path = docs/public
 	url = git@github.com:SebastianErfort/notes_public.git
 	branch = main
