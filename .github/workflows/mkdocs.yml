@@ -8,7 +8,7 @@ on:
   
   # Webhook trigger, e.g. from other pipeline
   repository_dispatch:
-    types: [updated_source]
+    # types: [updated_source]
 
   # Allows you to run this workflow manually from the Actions tab
   workflow_dispatch:
