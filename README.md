@@ -4,7 +4,11 @@
 
 Repository to collect my notes, build static HTML documentation using MkDocs-Material, and publish them on (GitHub for now) Pages.
 
-Sources are incorporated as Git submodules.
+This choice was a bit arbitrary, I was setting up a documentation system for work, using MkDocs, at the time. There are probably better alternatives that work better in the Obsidian ecosystem, that I am generally using to compose notes. MkDocs has to be extended and configured a fair bit to achieve reasonable compatibility with Obsidian Markdown.
+See [[obsidian#publishing|my notes on publishing Obsidian notes]] for alternatives.
+I used the [`mkdocs-publisher-template`](https://github.com/ObsidianPublisher/mkdocs-publisher-template) to improve and extend my MkDocs based solution
+
+By using Markdown and keeping notes in a separate repository, this system is very pluggable and switching to a different publishing tool should be as pain free ass possible. Sources are incorporated as Git submodules.
 
 
 ## To Do
@@ -37,10 +41,3 @@ Sources are incorporated as Git submodules.
     ```
 
 
-## Alternatives
-
-- [ObsidianPublisher](https://github.com/ObsidianPublisher/mkdocs-publisher-template): I used the `mkdocs-publisher-template` to improve and extend my MkDocs based solution
-- [Quartz](https://quartz.jzhao.xyz/)
-    > Quartz is a fast, batteries-included static-site generator that transforms Markdown content into fully functional websites. Thousands of students, developers, and teachers are already using Quartz to publish personal notes, websites, and digital gardens to the web.
-    - issues
-        - No navigation sidebar? How do you get an overview of contents other than manually creating maps of content and using the graph view?
