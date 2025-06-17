@@ -42,5 +42,3 @@ Sources are incorporated as Git submodules.
 - [ObsidianPublisher](https://github.com/ObsidianPublisher/mkdocs-publisher-template): I used the `mkdocs-publisher-template` to improve and extend my MkDocs based solution
 - [Quartz](https://quartz.jzhao.xyz/)
     > Quartz is a fast, batteries-included static-site generator that transforms Markdown content into fully functional websites. Thousands of students, developers, and teachers are already using Quartz to publish personal notes, websites, and digital gardens to the web.
-    - issues
-        - No navigation sidebar? How do you get an overview of contents other than manually creating maps of content and using the graph view?
