@@ -4,7 +4,7 @@
 
 Repository to collect my notes, build static HTML documentation using MkDocs-Material, and publish them on (GitHub for now) Pages.
 
-Sources are incorporated as Git submodules.
+Sources are plug and play as Git submodules in `docs/`.
 
 
 ## To Do
